@@ -1,0 +1,52 @@
+redis:
+  image: redis
+  expose:
+    - 6379
+  volumes:
+    - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+
+rabbitmq:
+  build: ./rabbitmq
+  # image: rabbitmq
+  expose:
+    - 5672
+    - 5671
+    - 15672
+    - 25672
+    - 4369
+  volumes:
+    - ./rabbitmq/rabbitmq.config:/etc/rabbitmq/rabbitmq.config
+  environment:
+    RABBITMQ_DEFAULT_USER: guest
+    RABBITMQ_DEFAULT_PASS: guest
+    RABBITMQ_DEFAULT_VHOST: /
+    RABBITMQ_NODE_PORT: 5672
+    # RABBITMQ_ERLANG_COOKIE: secret
+
+sensu:
+  build: ./sensu
+  # command: sudo /etc/init.d/sensu-server start
+  privileged: true
+  links:
+    - redis
+    - rabbitmq
+  expose:
+    - 4567
+  volumes:
+    - ./sensu/config.json:/etc/sensu/config.json
+
+testcontainer:
+  build: ./test-container
+  privileged: true
+  links:
+    - rabbitmq
+
+uchiwa:
+  image: uchiwa/uchiwa
+  ports:
+    - "4000:3000"
+  links:
+    - testcontainer
+    - sensu
+  volumes:
+    - ./uchiwa:/config
