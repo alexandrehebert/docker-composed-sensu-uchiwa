@@ -23,4 +23,4 @@ We assume that you got at least one docker machine called _docker-vm_. If not, y
 
 ## Check Uchiwa dashboard
 
-> open http://$(docker-machine ip docker-vm):4000/
+> open http://$(docker-machine ip docker-vm)/
