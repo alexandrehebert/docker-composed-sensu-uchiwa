@@ -20,3 +20,9 @@ We assume that you got at least one docker machine called _docker-vm_. If not, y
 ## Install & Run
 
 > source start-sensu.sh
+
+## Check Uchiwa dashboard
+
+> docker-machine ip docker-vm-name
+
+Go to : _http://docker-vm-ip:4000/_
