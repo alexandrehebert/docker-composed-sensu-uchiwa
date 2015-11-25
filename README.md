@@ -7,8 +7,6 @@ You need to install :
 - [docker-machine](https://docs.docker.com/machine/install-machine/)
 - [docker-compose](https://docs.docker.com/compose/install/)
 
-We assume that you got at least one docker machine called _docker-vm_. If not, you can change it in _start-sensu.sh_.
-
 ## Content
 
 5 docker containers + 1 docker compose file :
@@ -19,7 +17,9 @@ We assume that you got at least one docker machine called _docker-vm_. If not, y
 
 ## Install & Run
 
-> source start-sensu.sh
+We assume that you got at least one docker machine called _docker-vm_. If not, you can change it in the cmdline.
+
+> sh start-sensu.sh docker-vm
 
 ## Check Uchiwa dashboard
 
