@@ -9,11 +9,11 @@ rabbitmq:
   build: ./rabbitmq
   # image: rabbitmq
   expose:
-    - 5672
+    - 4369
     - 5671
+    - 5672
     - 15672
     - 25672
-    - 4369
   volumes:
     - ./rabbitmq/rabbitmq.config:/etc/rabbitmq/rabbitmq.config
   environment:
@@ -38,6 +38,7 @@ testcontainer:
   privileged: true
   links:
     - rabbitmq
+    - sensu
 
 uchiwa:
   image: uchiwa/uchiwa

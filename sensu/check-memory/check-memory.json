@@ -3,7 +3,9 @@
     "sensu-memory": {
       "command": "/etc/sensu/plugins/check-memory.sh -w 128 -c 64",
       "interval": 10,
-      "standalone": true,
+      "subscribers": [
+        "sensu"
+      ],
       "handlers": ["default", "debug"]
     }
   }

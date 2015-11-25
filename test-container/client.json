@@ -1,11 +1,4 @@
 {
-  "rabbitmq": {
-    "host": "rabbitmq",
-    "port": 5672,
-    "vhost": "/",
-    "user": "guest",
-    "password": "guest"
-  },
   "client": {
     "name": "test-container",
     "address": "testcontainer",

@@ -9,7 +9,7 @@ RUN apt-get update
 RUN apt-get install -y sensu
 
 # sensu default configuration
-COPY server.json /etc/sensu/config.json
+COPY config.json /etc/sensu/config.json
 COPY client.json /etc/sensu/conf.d/client.json
 COPY handler.json /etc/sensu/conf.d/default_handler.json
 
