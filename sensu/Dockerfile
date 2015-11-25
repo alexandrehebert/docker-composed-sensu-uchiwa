@@ -9,11 +9,11 @@ RUN apt-get update
 RUN apt-get install -y sensu
 
 # sensu default configuration
-COPY config.json /etc/sensu/config.json
+COPY server.json /etc/sensu/config.json
+COPY client.json /etc/sensu/conf.d/client.json
+COPY handler.json /etc/sensu/conf.d/default_handler.json
 
-# sensu client
-COPY check-memory/client.json /etc/sensu/conf.d/client.json
-COPY check-memory/handler.json /etc/sensu/conf.d/default_handler.json
+# sensu checks
 COPY check-memory/check-memory.sh /etc/sensu/plugins/check-memory.sh
 COPY check-memory/check-memory.json /etc/sensu/conf.d/check-memory.json
 RUN chmod +x /etc/sensu/plugins/check-memory.sh

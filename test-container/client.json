@@ -8,7 +8,7 @@
   },
   "client": {
     "name": "test-container",
-    "address": "test",
+    "address": "testcontainer",
     "subscriptions": [
       "test"
     ]

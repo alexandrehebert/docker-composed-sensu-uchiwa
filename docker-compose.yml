@@ -32,8 +32,6 @@ sensu:
     - rabbitmq
   expose:
     - 4567
-  volumes:
-    - ./sensu/config.json:/etc/sensu/config.json
 
 testcontainer:
   build: ./test-container

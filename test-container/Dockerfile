@@ -8,8 +8,10 @@ RUN echo "deb     http://repositories.sensuapp.org/apt sensu main" | tee /etc/ap
 RUN apt-get update
 RUN apt-get install -y sensu
 
-# sensu client
-COPY check-memory/client.json /etc/sensu/conf.d/client.json
+# sensu default configuration
+COPY client.json /etc/sensu/config.json
+
+# sensu checks
 COPY check-memory/check-memory.sh /etc/sensu/plugins/check-memory.sh
 COPY check-memory/check-memory.json /etc/sensu/conf.d/check-memory.json
 RUN chmod +x /etc/sensu/plugins/check-memory.sh
