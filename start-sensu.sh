@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ $# -lt 1 ]; then
-        echo "Usage: source start-sensu.sh <docker-machine-name>"
+        echo "Usage: sh start-sensu.sh <docker-machine-name>"
         exit 0
 fi
 
