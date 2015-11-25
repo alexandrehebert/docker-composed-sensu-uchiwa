@@ -38,7 +38,6 @@ testcontainer:
   privileged: true
   links:
     - rabbitmq
-    - sensu
 
 uchiwa:
   image: uchiwa/uchiwa
