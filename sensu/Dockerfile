@@ -13,7 +13,9 @@ COPY config.json /etc/sensu/config.json
 
 # sensu client
 COPY check-memory/client.json /etc/sensu/conf.d/client.json
+COPY check-memory/handler.json /etc/sensu/conf.d/default_handler.json
 COPY check-memory/check-memory.sh /etc/sensu/plugins/check-memory.sh
+COPY check-memory/check-memory.json /etc/sensu/conf.d/check-memory.json
 RUN chmod +x /etc/sensu/plugins/check-memory.sh
 
 # small fixes

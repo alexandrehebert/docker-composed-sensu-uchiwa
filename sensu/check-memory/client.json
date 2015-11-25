@@ -1,9 +1,16 @@
 {
+  "rabbitmq": {
+    "host": "rabbitmq",
+    "port": 5672,
+    "vhost": "/",
+    "user": "guest",
+    "password": "guest"
+  },
   "client": {
     "name": "sensu-container",
     "address": "sensu",
     "subscriptions": [
-      "sensu"
+      "sensu", "test"
     ]
   }
 }
